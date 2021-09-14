@@ -1,3 +1,19 @@
 ID: MVOD15_MTA_PROJ1
 _schema-version: '2.1'
 version: 0.0.1
+
+modules:
+ - name: MTATA
+   type: hdb
+   path: MTATA
+   requires:
+    - name: hdi_MTATA
+
+resources:
+ - name: hdi_MTATA
+   parameters:
+      config:
+         schema: sch_001
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
